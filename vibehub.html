@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VIBEHUB</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#07070d;color:#fff;overflow-x:hidden}
+.bg{position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 20%,#6c35ff55,transparent 28%),radial-gradient(circle at 80% 30%,#00d9ff44,transparent 25%),radial-gradient(circle at 50% 90%,#ff2f9140,transparent 30%);filter:blur(35px);animation:move 12s infinite alternate}
+@keyframes move{to{transform:scale(1.15) rotate(8deg)}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;position:sticky;top:0;background:#07070dcc;backdrop-filter:blur(16px);z-index:5}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}.logo span{color:#8b5cff}
+nav button,.hero button{border:0;border-radius:999px;padding:12px 20px;background:#fff;color:#111;font-weight:800}
+main{max-width:1100px;margin:auto;padding:70px 7%}
+.hero{text-align:center;min-height:68vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.badge{padding:8px 14px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff0c}
+h1{font-size:clamp(55px,12vw,130px);line-height:.85;margin:25px 0;background:linear-gradient(90deg,#fff,#9d7aff,#58eaff);-webkit-background-clip:text;color:transparent;transform:perspective(500px) rotateX(8deg)}
+.hero p{color:#aaa;font-size:18px;max-width:600px}.hero button{margin-top:20px;background:linear-gradient(90deg,#8b5cff,#27d9ff);color:#fff;box-shadow:0 0 35px #6f4cff55;cursor:pointer}
+section{margin:55px 0}.title{display:flex;justify-content:space-between;align-items:center}.title h2{font-size:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{padding:22px;border:1px solid #ffffff12;border-radius:22px;background:#ffffff08;backdrop-filter:blur(15px);transition:.25s;cursor:pointer}
+.card:hover{transform:translateY(-8px) rotateX(3deg);border-color:#8b5cff88;box-shadow:0 20px 50px #0008}
+.icon{font-size:42px}.card h3{margin:10px 0 5px}.card p{color:#999;margin:0}
+.rank{display:flex;align-items:center;gap:15px;padding:15px;border-bottom:1px solid #ffffff12}.rank b{font-size:20px;width:30px}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#8b5cff,#20d9ff)}
+footer{text-align:center;padding:45px;color:#777}
+.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(100px);background:#fff;color:#111;padding:13px 20px;border-radius:999px;font-weight:700;transition:.3s;z-index:10}
+.toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<nav><div class="logo">VIBE<span>HUB</span></div><button onclick="show('You are officially in the VIBE 🫡')">Join</button></nav>
+<main>
+<section class="hero">
+<div class="badge">🔥 THE NEXT GAMING HANGOUT</div>
+<h1>VIBE<br>HUB</h1>
+<p>Discover what's trending, find your next game, and see who's running the leaderboard.</p>
+<button onclick="document.getElementById('trending').scrollIntoView({behavior:'smooth'})">EXPLORE THE VIBE ↓</button>
+</section>
+
+<section id="trending">
+<div class="title"><h2>🔥 Trending Now</h2><span>LIVE</span></div>
+<div class="grid">
+<div class="card" onclick="show('Opening Roblox Zone 🎮')"><div class="icon">🎮</div><h3>Roblox Zone</h3><p>Find your next obsession.</p></div>
+<div class="card" onclick="show('Community is going crazy 🔥')"><div class="icon">🌎</div><h3>Community</h3><p>See what everyone is talking about.</p></div>
+<div class="card" onclick="show('Leaderboard loaded 🏆')"><div class="icon">🏆</div><h3>Leaderboard</h3><p>Climb. Flex. Repeat.</p></div>
+</div>
+</section>
+
+<section>
+<div class="title"><h2>🏆 Top Players</h2></div>
+<div class="card">
+<div class="rank"><b>#1</b><div class="avatar">👑</div><div><strong>Shadow</strong><br><small>98,420 XP</small></div></div>
+<div class="rank"><b>#2</b><div class="avatar">⚡</div><div><strong>Neo</strong><br><small>91,760 XP</small></div></div>
+<div class="rank"><b>#3</b><div class="avatar">🔥</div><div><strong>Viper</strong><br><small>87,310 XP</small></div></div>
+</div>
+</section>
+</main>
+<footer>VIBEHUB © 2026 • Built to be impossible to ignore.</footer>
+<div class="toast" id="toast"></div>
+<script>
+function show(t){let x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
+</script>
+</body>
+</html>
